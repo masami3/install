@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Usage: . dotbashrc.sh
+# Usage: . bashrc.sh
 
 login()
 {
