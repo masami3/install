@@ -8,6 +8,9 @@ require()
     sudo apt-get install build-essential libffi-dev git pkg-config
     sudo apt-get install gcc-arm-none-eabi libnewlib-arm-none-eabi
     sudo apt install qemu-system-arm
+    # for riscv
+    sudo apt install gcc-riscv64-unknown-elf
+    sudo apt install picolibc-riscv64-unknown-elf
 }
 
 clone()
@@ -43,4 +46,11 @@ build_qemu()
     cd ${HOME}/work/micropython/01/micropython/ports/qemu
     make
     make repl
+}
+
+build_qemu_riscv()
+{
+    cd ${HOME}/work/micropython/01/micropython/ports/qemu
+    make BOARD=VIRT_RV32
+    make BOARD=VIRT_RV32 repl
 }
